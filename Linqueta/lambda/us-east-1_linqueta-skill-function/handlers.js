@@ -1,4 +1,5 @@
 const Alexa = require('ask-sdk-core');
+const { feed } = require('./services/blog');
 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
@@ -10,7 +11,7 @@ const LaunchRequestHandler = {
       .speak(requestAttributes.t('WELCOME_MESSAGE'))
       .reprompt(requestAttributes.t('WELCOME_REPROMPT_MESSAGE'))
       .getResponse();
-  },
+  }
 };
 
 const HelpHandler = {
