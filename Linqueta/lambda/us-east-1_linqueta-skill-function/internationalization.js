@@ -8,7 +8,8 @@ module.exports = {
       HELP_MESSAGE: options,
       FALLBACK_MESSAGE: options,
       STOP_MESSAGE: 'Até mais',
-      CASES_REPROMPT_MESSAGE: `Gostaria de saber mais algo sobre o Linqueta?`
+      CASES_REPROMPT_MESSAGE: 'Gostaria de saber mais algo sobre o Linqueta?',
+      LAST_BLOG_POST: 'O último post do blog foi <lang xml:lang="en-US">{{title}}</lang>'
     }
   }
 };

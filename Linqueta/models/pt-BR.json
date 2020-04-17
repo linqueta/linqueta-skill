@@ -23,6 +23,9 @@
           "name": "LastBlogPostIntent",
           "slots": [],
           "samples": [
+            "qual foi o último post",
+            "qual foi o último post do blog",
+            "qual foi o último post do blog do linqueta",
             "qual o último post",
             "qual o último post do blog",
             "qual o último post do blog do linqueta"

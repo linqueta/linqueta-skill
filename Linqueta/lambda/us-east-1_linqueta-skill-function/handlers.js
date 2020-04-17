@@ -1,5 +1,5 @@
 const Alexa = require('ask-sdk-core');
-const { feed } = require('./services/blog');
+const { feed, last } = require('./services/blog');
 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
@@ -12,6 +12,20 @@ const LaunchRequestHandler = {
       .reprompt(requestAttributes.t('WELCOME_REPROMPT_MESSAGE'))
       .getResponse();
   }
+};
+
+const LastBlogPostIntentHandler = {
+  canHandle(handlerInput) {
+    return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+      && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LastBlogPostIntent';
+  },
+  async handle(handlerInput) {
+    const data = await last();
+    const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
+    return handlerInput.responseBuilder
+      .speak(requestAttributes.t('LAST_BLOG_POST', { title: data.title[0] }))
+      .getResponse();
+  },
 };
 
 const HelpHandler = {
@@ -88,6 +102,7 @@ const ErrorHandler = {
 module.exports = {
   commons: [
     LaunchRequestHandler,
+    LastBlogPostIntentHandler,
     HelpHandler,
     ExitHandler,
     FallbackHandler,
