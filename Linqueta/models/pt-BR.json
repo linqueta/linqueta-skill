@@ -1,0 +1,44 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "o linqueta",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "LastBlogPostIntent",
+          "slots": [],
+          "samples": [
+            "qual o último post",
+            "qual o último post do blog",
+            "qual o último post do blog do linqueta"
+          ]
+        },
+        {
+          "name": "PostQuantityIntent",
+          "slots": [],
+          "samples": [
+            "quantos posts já foram feitos",
+            "quantos posts o linqueta já fez"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "2"
+}
