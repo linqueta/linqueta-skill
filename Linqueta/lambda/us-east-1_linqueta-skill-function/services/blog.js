@@ -14,7 +14,13 @@ const last = async () => {
   return data.channel[0].item[0];
 }
 
+const postCount = async () => {
+  const data = await feed();
+  return data.channel[0].item.length;
+}
+
 module.exports = {
   feed,
-  last
+  last,
+  postCount
 }

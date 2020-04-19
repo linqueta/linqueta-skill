@@ -1,5 +1,5 @@
 const Alexa = require('ask-sdk-core');
-const { feed, last } = require('./services/blog');
+const { postCount, last } = require('./services/blog');
 
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
@@ -23,7 +23,23 @@ const LastBlogPostIntentHandler = {
     const data = await last();
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
     return handlerInput.responseBuilder
-      .speak(requestAttributes.t('LAST_BLOG_POST', { title: data.title[0] }))
+      .speak(requestAttributes.t('LAST_BLOG_POST_MESSAGE', { title: data.title[0] }))
+      .reprompt(requestAttributes.t('WELCOME_REPROMPT_MESSAGE'))
+      .getResponse();
+  },
+};
+
+const PostQuantityIntentHandler = {
+  canHandle(handlerInput) {
+    return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+      && Alexa.getIntentName(handlerInput.requestEnvelope) === 'PostQuantityIntent';
+  },
+  async handle(handlerInput) {
+    const quantity = await postCount();
+    const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
+    return handlerInput.responseBuilder
+      .speak(requestAttributes.t('POST_QUANTITY_MESSAGE', { quantity }))
+      .reprompt(requestAttributes.t('WELCOME_REPROMPT_MESSAGE'))
       .getResponse();
   },
 };
@@ -103,6 +119,7 @@ module.exports = {
   commons: [
     LaunchRequestHandler,
     LastBlogPostIntentHandler,
+    PostQuantityIntentHandler,
     HelpHandler,
     ExitHandler,
     FallbackHandler,

@@ -1,4 +1,4 @@
-const options = `Você pode perguntar sobre os <emphasis level="reduced">posts</emphasis> do blog e sobre as contribuições no Github`
+const options = `Você pode perguntar sobre os <emphasis level="reduced">posts</emphasis> do blog`
 
 module.exports = {
   'pt-BR': {
@@ -8,8 +8,9 @@ module.exports = {
       HELP_MESSAGE: options,
       FALLBACK_MESSAGE: options,
       STOP_MESSAGE: 'Até mais',
-      CASES_REPROMPT_MESSAGE: 'Gostaria de saber mais algo sobre o Linqueta?',
-      LAST_BLOG_POST: 'O último post do blog foi <lang xml:lang="en-US">{{title}}</lang>'
+      CASES_REPROMPT_MESSAGE: 'Gostaria de saber mais alguma coisa sobre o Linqueta?',
+      LAST_BLOG_POST_MESSAGE: 'O último post do blog foi <lang xml:lang="en-US">{{title}}</lang>',
+      POST_QUANTITY_MESSAGE: 'Já são {{quantity}} <emphasis level="reduced">posts</emphasis> no blog do linqueta'
     }
   }
 };
