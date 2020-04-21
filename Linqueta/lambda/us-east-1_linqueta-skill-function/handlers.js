@@ -24,7 +24,6 @@ const LastBlogPostIntentHandler = {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
     return handlerInput.responseBuilder
       .speak(requestAttributes.t('LAST_BLOG_POST_MESSAGE', { title: data.title[0] }))
-      .reprompt(requestAttributes.t('WELCOME_REPROMPT_MESSAGE'))
       .getResponse();
   },
 };
@@ -39,7 +38,6 @@ const PostQuantityIntentHandler = {
     const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
     return handlerInput.responseBuilder
       .speak(requestAttributes.t('POST_QUANTITY_MESSAGE', { quantity }))
-      .reprompt(requestAttributes.t('WELCOME_REPROMPT_MESSAGE'))
       .getResponse();
   },
 };

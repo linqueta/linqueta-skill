@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "o linqueta",
+      "invocationName": "blog do linqueta",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -36,6 +36,7 @@
           "slots": [],
           "samples": [
             "quantos posts já foram feitos",
+            "quantos posts já foram feitos no blog",
             "quantos posts o linqueta já fez"
           ]
         }

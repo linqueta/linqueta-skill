@@ -1,16 +1,15 @@
-const options = `Você pode perguntar sobre os <emphasis level="reduced">posts</emphasis> do blog`
+const help = `Você pode perguntar qual foi o último <lang xml:lang="en-US">post</lang> do blog ou quantos <lang xml:lang="en-US">postis</lang> já foram feitos`;
 
 module.exports = {
   'pt-BR': {
     translation: {
-      WELCOME_MESSAGE: `Bem vindo a skill do Linqueta, aqui ${options}`,
-      WELCOME_REPROMPT_MESSAGE: options,
-      HELP_MESSAGE: options,
-      FALLBACK_MESSAGE: options,
+      WELCOME_MESSAGE: `Bem vindo ao blog do Linqueta. Para começar ${help}. O que gostaria de fazer?`,
+      WELCOME_REPROMPT_MESSAGE: help,
+      HELP_MESSAGE: `Para te ajudar, ${help}`,
+      FALLBACK_MESSAGE: `Ops, não entendi o que você disse, aqui ${help}`,
       STOP_MESSAGE: 'Até mais',
-      CASES_REPROMPT_MESSAGE: 'Gostaria de saber mais alguma coisa sobre o Linqueta?',
-      LAST_BLOG_POST_MESSAGE: 'O último post do blog foi <lang xml:lang="en-US">{{title}}</lang>',
-      POST_QUANTITY_MESSAGE: 'Já são {{quantity}} <emphasis level="reduced">posts</emphasis> no blog do linqueta'
+      LAST_BLOG_POST_MESSAGE: `O último <lang xml:lang="en-US">post</lang> do blog foi <lang xml:lang="en-US">{{title}}</lang>`,
+      POST_QUANTITY_MESSAGE: `Já são {{quantity}} <lang xml:lang="en-US">postis</lang> no blog do linqueta`
     }
   }
 };
